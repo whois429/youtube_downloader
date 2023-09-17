@@ -1,5 +1,4 @@
 from typing import Any
-from pathlib import Path
 
 import validators
 import inquirer
@@ -89,8 +88,6 @@ def get_user_input() -> dict[str, str]:
 
 
 def download(user_data: dict[str, str]) -> None:
-    Path(OUT_DIR).mkdir(parents=True, exist_ok=True)
-
     if user_data['links']:
         ydl_opts = {
             'outtmpl': OUT_DIR + '/%(title)s.%(ext)s',
